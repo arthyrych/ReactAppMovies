@@ -1,8 +1,3 @@
-/* eslint-disable jest/valid-expect */
-/* eslint-disable jest/valid-expect-in-promise */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable jest/expect-expect */
-/* eslint-disable no-undef */
 /// <reference types="cypress" />
 
 context('Assertions', () => {

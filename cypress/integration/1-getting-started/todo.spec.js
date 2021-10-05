@@ -1,5 +1,3 @@
-/* eslint-disable jest/expect-expect */
-/* eslint-disable no-undef */
 /// <reference types="cypress" />
 
 // Welcome to Cypress!
