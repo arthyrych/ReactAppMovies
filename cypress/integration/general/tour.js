@@ -1,8 +1,10 @@
-describe('make sure site loads', () => {
+describe('spec description', () => {
 
-    it('page loads', () => {
-
+    beforeEach(() => {
         cy.visit('http://localhost:3000/')
+    })
+
+    it('correct movie url', () => {
         cy.contains('Filter')
         cy.get('[data-test-id="movies-list-movie"]').first().then(($movie) => {
             const movieUrl = $movie.attr("href")
@@ -11,6 +13,16 @@ describe('make sure site loads', () => {
             cy.url().should('include', movieUrl)
     
         })
+    })
+
+    it('correct number of movies', () => {
+        cy.get('[data-test-id="movies-list-movie"]').should('have.length', 20)
+    })
+
+    it('some assertions', () => {
+        cy.get('[data-test-id="movies-list-movie"]').should('have.length', 20)
+        cy.get('[data-test-id="movies-list-movie"]').should('exist')
+        cy.get('[data-test-id="movies-loading-movie"]').should('not.exist')
     })
 
 })
