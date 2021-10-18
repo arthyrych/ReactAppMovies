@@ -15,6 +15,7 @@ export function MoviesList() {
     try {
       const res = await fetch(API_URL + process.env.REACT_APP_MOVIE_API)
       const movies = await res.json()
+      console.log("movies", JSON.stringify(movies))
       setMovies(movies.results)
     } catch (e) {
       console.error(e)

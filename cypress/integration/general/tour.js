@@ -23,6 +23,11 @@ describe('spec description', () => {
         cy.get('[data-test-id="movies-list-movie"]').should('have.length', 20)
         cy.get('[data-test-id="movies-list-movie"]').should('exist')
         cy.get('[data-test-id="movies-loading-movie"]').should('not.exist')
+
+        cy.fixture('moviesList').then((jsonData) => {
+            console.log('jsonData', jsonData.results[0].title)
+            expect(jsonData.results[0].title).to.eq("Venom: Let There Be Carnage")
+        })
     })
 
 })
