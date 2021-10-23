@@ -1,7 +1,11 @@
 describe('spec description', () => {
+    const moviesApiUrl = "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&api_key=65e043c24785898be00b4abc12fcdaae"
+    const configApiUrl = "https://api.themoviedb.org/3/configuration?api_key=65e043c24785898be00b4abc12fcdaae"
 
     beforeEach(() => {
-        cy.visit('http://localhost:3000/')
+        cy.intercept(moviesApiUrl, {fixture: "moviesList"})
+        cy.intercept(configApiUrl, {fixture: "moviesConfig"})
+        cy.visit('/')
     })
 
     it('correct movie url', () => {

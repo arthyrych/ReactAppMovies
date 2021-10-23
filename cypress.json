@@ -1,3 +1,7 @@
 {
+    "env": {
+        "CONSOLE_ON": true
+    },
+    "baseUrl": "http://localhost:3000/",
     "experimentalStudio": true
 }
