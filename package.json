@@ -17,7 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:general": "cypress run --spec 'cypress/integration/general/**'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.1",
     "cypress": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1"
   }
