@@ -4,4 +4,8 @@ export class MainPage {
         return cy.get('[data-test-id="movies-list-movie"]')
     }
 
+    getFilter() {
+        return cy.contains('Filter')
+    }
+
 }
