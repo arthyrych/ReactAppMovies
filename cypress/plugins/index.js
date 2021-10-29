@@ -21,13 +21,12 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
 
   // automatically opens Chrome DevTools after opening Cypress in gui mode
-  if(config.env.CONSOLE_ON) {
+  if (config.env.CONSOLE_ON) {
     on('before:browser:launch', (browser = {}, launchOptions) => {
       if (browser.name === 'chrome') {
-          launchOptions.args.push('--auto-open-devtools-for-tabs')
-          return launchOptions
+        launchOptions.args.push('--auto-open-devtools-for-tabs')
+        return launchOptions
       }
-    })    
+    })
   }
-
 }
